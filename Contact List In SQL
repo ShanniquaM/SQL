@@ -1,0 +1,42 @@
+-- What does the app's SQL look like?
+CREATE Table contacts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT,
+    last_name TEXT,
+    birthdate INTEGER,
+    address TEXT);
+    
+INSERT INTO contacts (first_name, last_name, birthdate, address)
+    VALUES ("Melissa", "Winters", "09-12-1987", "576 Hillberry Street, Portland, OR  95129");
+INSERT INTO contacts (first_name, last_name, birthdate, address)
+    VALUES ("Donna", "Sheers", "11-04-1976", "17 Washington Square, Portland, OR  95014");
+INSERT INTO contacts (first_name, last_name, birthdate, address)
+    VALUES ("James", "Bandwith", "01-12-1996", "20 Chelsea Street, Portland, OR  97410");
+INSERT INTO contacts (first_name, last_name, birthdate, address)
+    VALUES ("Richard", "Greenlight", "10-22-1987", "56 Marley Avenue, Portland, OR  97529");
+
+-- finding a certain contact based on full  name
+SELECT * FROM contacts;
+
+UPDATE contacts SET first_name = "Charles" WHERE first_name = "Richard";
+
+-- finding a certain contact based on their address
+SELECT * FROM contacts;
+
+UPDATE contacts SET address = "15 Myrtle Street , Portland, OR 96514" WHERE address = "20 Chelsea Street, Portland, OR  97410";
+
+SELECT * FROM contacts;
+
+-- picking out contacts based on age and their id numbers 
+ALTER TABLE contacts add age INTEGER;
+
+UPDATE contacts SET age = "35" WHERE id = "1";
+UPDATE contacts SET age = "46" WHERE id = "2";
+UPDATE contacts SET age = "27" WHERE id = "3";
+UPDATE contacts SET age = "35" WHERE id = "4";
+
+-- deleting certain contacts using their last name
+SELECT * FROM contacts;
+
+DELETE FROM contacts WHERE last_name = "Greenlight";
+SELECT * FROM contacts;
