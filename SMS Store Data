@@ -1,0 +1,39 @@
+-- Create a database for store inventory 
+CREATE TABLE SMSSTORE (name TEXT, 
+color TEXT, 
+id INTEGER,
+size TEXT,
+price INTEGER );
+
+INSERT INTO SMSSTORE VALUES ( "T-shirt", "black", 879848, "S, M, L, XL" , 5);
+INSERT INTO SMSSTORE VALUES ( "Hiking Shoes", "white, grey" , 891478, "6, 8", 55);
+INSERT INTO SMSSTORE VALUES ("Socks", "red, black, green, grey, white" , 147289, "S, M, L", 5);
+INSERT INTO SMSSTORE VALUES ("Scarf", "black, white, amber", 152849, "S, M, L", 20);
+INSERT INTO SMSSTORE VALUES ("Dress", "purple, ash grey, black", 418714, "M, L", 30);
+INSERT INTO SMSSTORE VALUES ("Gloves", "black", 728985, "L", 10);
+INSERT INTO SMSSTORE VALUES ("Ear Muffs", "red, brown, white", 851254, "S, M, L", 15);
+INSERT INTO SMSSTORE VALUES ("Beanies", "red", 511118, "M, L", 10);
+INSERT INTO SMSSTORE VALUES ("Heels", "black, gold, silver", 158124, "S, M, L", 75);
+INSERT INTO SMSSTORE VALUES ("Running Shoes", "grey, black", 544481, "8, 9, 3, 4", 65);
+INSERT INTO SMSSTORE VALUES ("Jeans", "dark denim, light denim, white", 777448, "S, M, L", 35);
+INSERT INTO SMSSTORE VALUES ("Sweaters", "light blue, green, pink", 858584, "S, M, L, XL, 2X", 18);
+INSERT INTO SMSSTORE VALUES ("Underwear", "multicolor, black, pink, red, white, roses", 857481, "S, M, L", 10);
+INSERT INTO SMSSTORE VALUES ("Sweatpants", "white, pink, brown", 284985, "S, M, L", 20);
+INSERT INTO SMSSTORE VALUES ("Shorts", "light denim, blue, black, white", 501000, "S, M, L", 15);
+
+SELECT * FROM SMSSTORE;
+
+-- which items are under 30 dollars?
+SELECT * FROM SMSSTORE WHERE price < 30 ORDER BY price;
+
+-- which items are under 20 dollars?
+SELECT * FROM SMSSTORE WHERE price < 20 ORDER BY price;
+
+-- what is the maximum price of an item from the store?
+SELECT name,  MAX(price) FROM SMSSTORE; 
+
+-- what is the minimum price of an item from the store?
+SELECT name, MIN(price) FROM SMSSTORE;
+
+-- what is the  total sum of all the items from the store?
+SELECT SUM(price) FROM SMSSTORE ORDER BY name; 
