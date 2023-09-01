@@ -1,2 +1,2 @@
-# SQL
+# Shanniqua MCcurbyn SQL
 SQL Portfolio
